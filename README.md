@@ -61,6 +61,21 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
      
      } ---  ///상단의 버튼(베스트,커피,..)을 눌렀을때 색깔을 바꿔주는 함수
 
+      buttonBestMenu.setOnClickListener(new View.OnClickListener() {...}
+           
+      buttonCoffee.setOnClickListener(new View.OnClickListener() {...}
+            
+      buttonNonCoffee.setOnClickListener(new View.OnClickListener() {...}
+            
+      buttonSmoothie.setOnClickListener(new View.OnClickListener() {...}
+            
+      buttonJuice.setOnClickListener(new View.OnClickListener() {...}
+            
+      buttonDessert.setOnClickListener(new View.OnClickListener() {...}
+
+      ▲ 상단의 버튼에다가 setOnCLickListener를 붙이니까 코드량이 길어지고 중복된다.
+            
+
 
 # 2. 중간부분
 
