@@ -127,11 +127,17 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
         ((FrameLayout) viewKoreaMenu.findViewById(R.id.Frame_Layout)).removeAllViews();
         ((FrameLayout) viewKoreaMenu.findViewById(R.id.Frame_Layout)).addView(A1);
     }  ///ex)베스트를 눌렀을때 f_best만 나오고 나머지 프레그먼트는 없애는 함수
+    
     buttonBestMenu.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}     
+    
     buttonCoffee.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}       
+    
     buttonNonCoffee.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}      
+    
     buttonSmoothie.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}     
+    
     buttonJuice.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}      
+    
     buttonDessert.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}
 
   
