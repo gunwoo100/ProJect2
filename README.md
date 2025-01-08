@@ -86,7 +86,6 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 아래의 코드는 색깔을 바뀌게 해주는 함수이다.
 
 --- void setCategoryColor(Button G1,Button G2,Button G3,Button G4,Button G5,Button B1){ 
-         
          G1.setTextColor(Color.parseColor("#878282"));
          G2.setTextColor(Color.parseColor("#878282"));
          G3.setTextColor(Color.parseColor("#878282"));
