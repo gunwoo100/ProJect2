@@ -34,9 +34,12 @@
 
 ![화면 캡처 2025-01-08 194712](https://github.com/user-attachments/assets/40c4e4fa-75d9-4bda-895e-7a555abbace1)
 
-상단의 버튼은 imageButton,Button를 사용했고, 
+• 상단의 버튼은 imageButton,Button를 사용했고, 
 
-LinearLayout(가,세)과/와 margin값을 조정하면서 view버튼들을 배치했다.
+  LinearLayout(가,세)과/와 margin값을 조정하면서 버튼들을 배치했다.
+
+• 하지만 이렇게 하나하나 배치하다 보니 시간이 너무 오래 걸린 문제점이 있었다. 
+<font color="red">이 텍스트는 빨간색입니다</font>
 
 
 
