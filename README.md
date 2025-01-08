@@ -47,7 +47,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 아래의 코드는 색깔을 바뀌게 해주는 함수이다.
 
---- void setCategoryColor(Button G1,Button G2,Button G3,Button G4,Button G5,Button B1){ ---
+--- void setCategoryColor(Button G1,Button G2,Button G3,Button G4,Button G5,Button B1){ 
          
          G1.setTextColor(Color.parseColor("#878282"));
          
@@ -61,7 +61,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
          
          B1.setTextColor(Color.parseColor("#000000"));
      
-     }  ///상단의 버튼(베스트,커피,..)을 눌렀을때 색깔을 바꿔주는 함수
+     } ---  ///상단의 버튼(베스트,커피,..)을 눌렀을때 색깔을 바꿔주는 함수
 
 
 
