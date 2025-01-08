@@ -145,8 +145,47 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
   --다이얼로그화면은 하나씩 만듦 
     --> ▲하나씩 만들면 나중에 커피개수가 많아지면 만들어야 될게 많아서 작업량이 많아질 수 있다는 문제점이 있다
-    --> 리사이클러 뷰를 활용하면 화면 틀만 만든 다음에 
+    --> 리사이클러 뷰를 활용해서 화면 틀만 만든 다음에 
         어뎁터에 데이터를 넘겨주면 작업량도 줄고 메뉴가 추가될때 리스트에다가 추가만 해주면 문제점을 해결할 수 있을거 같다.
+
+아래코드는 위에서 언급한 내용을 구현한 코드이다.
+
+ void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(layout, null); // xml명 변경
+        builder.setView(dialogView)
+                .setTitle("")
+                .setPositiveButton("장바구니에 담기", (dialog, which) -> {
+                    RadioButton rb = dialogView.findViewById(rb_id);
+
+                      •••뒤에서 설명할 예정•••
+                })
+                .setNegativeButton("취소", (dialog, which) -> {
+                    dialog.dismiss();
+                    // Handle Cancel button click
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+    만든이유 : 다이얼로그생성코드가 중복되어서
+    인자 :  1.다이얼로그 레이아웃,
+            2.HOT,COLD커피 (라디오 버튼에서 hot을 누르면 리스트에 coffee1(hot),cold를 누르면 리스트에 coffee2(cold)를 담기 위해)
+            3.해당 다이얼로그의 라디오 버튼(사용자가 hot을 눌렀는지 cold를 눌렀는지 ischecked()로 확인하기 위해서)
+
+    public void coffee1_selected(View view){
+        MakeDialog(R.layout.coffee1_selected,coffee1,coffee2,R.id.rb_hot);
+    }
+    public void coffee2_selected(View view) {
+        MakeDialog(R.layout.coffee2_selected,coffee3,coffee4,R.id.rb_hot2);
+    }
+    public void coffee3_selected(View view){
+        MakeDialog(R.layout.coffee3_selected,coffee5,coffee6,R.id.rb_hot3);
+    }
+    public void coffee5_selected(View view){
+        MakeDialog(R.layout.coffee5_selected,coffee7,coffee8,R.id.rb_hot5);
+    }  ///해당 메뉴를 눌렀을때 MakeDialog함수를 실행함
+
 
 
 
