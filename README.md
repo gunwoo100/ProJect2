@@ -30,8 +30,13 @@
 # • 최종 메뉴 선택화면
 ![화면 캡처 2025-01-08 180715](https://github.com/user-attachments/assets/ebe010f8-b1db-46e0-8337-d49fe7dcb101)
 
-# 윗 부분
+# 1. 윗 부분
 
+![화면 캡처 2025-01-08 194712](https://github.com/user-attachments/assets/40c4e4fa-75d9-4bda-895e-7a555abbace1)
+
+상단의 버튼은 imageButton,Button를 사용했고, 
+
+LinearLayout(가,세)과/와 margin값을 조정하면서 view버튼들을 배치했다.
 
 
 
