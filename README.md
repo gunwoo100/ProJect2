@@ -70,7 +70,8 @@
 
 
 # • 최종 메뉴 선택화면
-![화면 캡처 2025-01-08 180715](https://github.com/user-attachments/assets/ebe010f8-b1db-46e0-8337-d49fe7dcb101)
+![화면 캡처 2025-01-08 180715](https://github.com/user-attachments/assets/ebe010f8-b1db-46e0-8337-d49fe7dcb101) ![화면 캡처 2025-01-08 181043](https://github.com/user-attachments/assets/ff5cb2f5-47d7-4e92-807f-a4aa6a13d137)
+
 
 # 1. 윗 부분
 
