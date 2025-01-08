@@ -64,6 +64,8 @@
             Log.e("Error", "viewKoreaMenu is null");
         }
     }  ///버튼의 아이디를 얻는 함수
+    
+    **inflater를 이용해서 xml을 뷰로 바꾸는 작업**
 
 
 
