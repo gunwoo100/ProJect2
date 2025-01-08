@@ -16,11 +16,12 @@
 
 # 앱의 맨 앞부분
 
-![화면 캡처 2025-01-08 175715](https://github.com/user-attachments/assets/530d5d6d-59ae-48e1-9656-ec58e3fed7b6)      • 매장,포장버튼 : ImageButton
+![화면 캡처 2025-01-08 175715](https://github.com/user-attachments/assets/530d5d6d-59ae-48e1-9656-ec58e3fed7b6)      
+• 매장,포장버튼 : ImageButton
 
-                                                                                                                     • 레이아웃 : ConstraintLayout
+• 레이아웃 : ConstraintLayout
 
-                                                                                                                     • 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)
+• 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)
 
 
 
