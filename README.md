@@ -25,6 +25,46 @@
   
   그래서 "위, 중간, 아래"로 나누어서 하나씩 설명할 예정이다.
 
+⁕ 참고 ⬇
+
+
+    View XMLView(int idLayout){
+        return getLayoutInflater().inflate(idLayout,null,false);<br>
+    }  ///xml파일을 view객체로 바꿔주는 함수
+
+    void getLayout_ID(){
+        viewMain = XMLView(R.layout.activity_main_project);
+        viewKoreaMenu = XMLView(R.layout.activity_main_foodmenu_korean);
+        F_bestFood = XMLView(R.layout.f_bestfood);
+        F_coffee = XMLView(R.layout.f_coffee);
+        F_nonCoffee= XMLView(R.layout.f_non_coffee);
+        F_smoothie= XMLView(R.layout.f_smoothie);
+        F_juice= XMLView(R.layout.f_juice);
+        F_dessert= XMLView(R.layout.f_dessert);
+        RvItem = XMLView(R.layout.rv_item_baseket);
+    }  ///view 객체의 id를 얻는 함수
+
+    void getViewId(){
+        if (viewKoreaMenu != null) {
+            buttonBestMenu = viewKoreaMenu.findViewById(R.id.Button_Best_K);
+            buttonCoffee = viewKoreaMenu.findViewById(R.id.Button_Coffee_K);
+            buttonNonCoffee = viewKoreaMenu.findViewById(R.id.Button_NonCoffee_K);
+            buttonJuice = viewKoreaMenu.findViewById(R.id.Button_Jucie_K);
+            buttonSmoothie = viewKoreaMenu.findViewById(R.id.Button_Smodi_K);
+            buttonDessert = viewKoreaMenu.findViewById(R.id.Button_Disert_K);
+            buttonDelete = viewKoreaMenu.findViewById(R.id.buttonDelete);
+
+            tv_amount = viewKoreaMenu.findViewById(R.id.textAmount);
+            tv_price = viewKoreaMenu.findViewById(R.id.textPrice);
+
+            recyclerView = viewKoreaMenu.findViewById(R.id.rv);
+
+        } else {
+            // viewKoreaMenu가 null일 경우, 로그를 찍거나 처리
+            Log.e("Error", "viewKoreaMenu is null");
+        }
+    }  ///버튼의 아이디를 얻는 함수
+
 
 
 # • 최종 메뉴 선택화면
@@ -73,7 +113,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             
       buttonDessert.setOnClickListener(new View.OnClickListener() {...}
 
-      ▲ 상단의 버튼에다가 setOnCLickListener를 붙이니까 코드량이 길어지고 중복된다.
+      ▲ 상단에 있는 모든버튼에다가 setOnCLickListener를 붙이니까 코드량이 길어지고 중복된다.
             
 
 
@@ -82,8 +122,11 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 ![2](https://github.com/user-attachments/assets/f4258631-6a05-4232-b1d1-8415903e3157)
 
 •상단의 버튼을 눌렀을때 해당되는 화면이 뜬다(ex)커피-->커피음료만 표시되는 화면)
+
  --먼저 커피,논커피,...에 대한 화면을 프래그먼트로 각각 만든 다음에
    커피를 누르면 커피 프래그먼트만 뜨고 나머지는 보이지 않게 코드를 작성했다.
+
+아래는 그걸 구현한 코드이다.
 
   
 
