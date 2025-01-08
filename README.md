@@ -187,6 +187,8 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             MakeDialog(R.layout.coffee5_selected,coffee7,coffee8,R.id.rb_hot5);
         }  ///해당 메뉴를 눌렀을때 MakeDialog함수를 실행함
 
+# 3. 하단 부분(🎇)
+
 
 
 
