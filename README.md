@@ -121,7 +121,18 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
  --먼저 커피,논커피,...에 대한 화면을 프래그먼트로 각각 만든 다음에
    커피를 누르면 커피 프래그먼트만 뜨고 나머지는 보이지 않게 코드를 작성했다.
 
-아래는 그걸 구현한 코드이다.
+아래코드는 위에서 언급한 내용을 구현한 것이다.
+
+    void Remove_AND_AddView(View A1){
+        ((FrameLayout) viewKoreaMenu.findViewById(R.id.Frame_Layout)).removeAllViews();
+        ((FrameLayout) viewKoreaMenu.findViewById(R.id.Frame_Layout)).addView(A1);
+    }  ///ex)베스트를 눌렀을때 f_best만 나오고 나머지 프레그먼트는 없애는 함수
+    buttonBestMenu.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}     
+    buttonCoffee.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}       
+    buttonNonCoffee.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}      
+    buttonSmoothie.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}     
+    buttonJuice.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}      
+    buttonDessert.setOnClickListener(new View.OnClickListener() {Remove_AND_AddView(화면에 보일 프래그먼트);}
 
   
 
