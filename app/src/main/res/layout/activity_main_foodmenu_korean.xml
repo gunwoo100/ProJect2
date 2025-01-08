@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/Brand_Image"
+            android:layout_width="45dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="2pt"
+            android:layout_marginTop="4pt"
+            android:layout_marginEnd="2pt"
+            app:srcCompat="@drawable/brandicon" />
+
+        <TextView
+            android:id="@+id/brand_Name"
+            android:layout_width="130dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="2pt"
+            android:layout_marginTop="3pt"
+            android:layout_marginEnd="3pt"
+            android:layout_weight="1"
+            android:fontFamily="@font/adlam_display"
+            android:gravity="center"
+            android:text="paythere"
+            android:textSize="10pt" />
+
+        <Button
+            android:id="@+id/button_language_To_E"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2.5pt"
+            android:layout_weight="1"
+            android:backgroundTint="#E78C8C"
+            android:onClick="Language_Change_English"
+            android:text="🌐Language"
+            android:textSize="4.5pt" />
+
+        <Button
+            android:id="@+id/K_Button_Change"
+            android:layout_width="60pt"
+            android:layout_height="46dp"
+            android:layout_marginTop="3pt"
+            android:layout_weight="1"
+            android:backgroundTint="#127FEB"
+            android:onClick="changeMode"
+            android:text="🔄포장변경"
+            android:textSize="4.5pt" />
+
+        <ImageButton
+            android:id="@+id/K_Button_Home"
+            android:layout_width="24dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="7pt"
+            android:layout_marginEnd="2pt"
+            android:onClick="homeClicked"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            app:srcCompat="@drawable/homeicon" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="6pt"
+        android:layout_marginStart="2pt"
+        app:srcCompat="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Button_Best_K"
+            android:layout_width="79dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_marginStart="2pt"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:padding="1pt"
+            android:text="베스트"
+            android:textColor="#000000"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Button_Coffee_K"
+            android:layout_width="78dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:padding="1pt"
+            android:text="커피"
+            android:textColor="#878282"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Button_NonCoffee_K"
+            android:layout_width="78dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:onClick="ButtonNonCoffee_K_Clicked"
+            android:padding="1pt"
+            android:text="논커피 "
+            android:textColor="#878282"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Button_Smodi_K"
+            android:layout_width="78dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:padding="1pt"
+            android:text="스무디"
+            android:textColor="#878282"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Button_Jucie_K"
+            android:layout_width="78dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:padding="1pt"
+            android:text="주스"
+            android:textColor="#878282"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Button_Disert_K"
+            android:layout_width="78dp"
+            android:layout_height="20pt"
+            android:layout_gravity="center"
+            android:layout_marginEnd="2pt"
+            android:backgroundTint="#FFFFFF"
+            android:minWidth="2pt"
+            android:padding="1pt"
+            android:text="디저트"
+            android:textColor="#878282"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="6pt"
+        android:layout_marginStart="2pt"
+        app:srcCompat="@drawable/line" />
+
+    <FrameLayout
+        android:id="@+id/Frame_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="506dp">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3pt"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/UpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+
+        <ImageButton
+            android:id="@+id/DownButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="340dp"
+            android:layout_height="233dp"
+            android:layout_gravity="right" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="231dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textAmount"
+                android:layout_width="111dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="총 0개 선택"
+                android:textColor="#6379E2"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textPrice"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3pt"
+                android:layout_marginBottom="5pt"
+                android:gravity="center"
+                android:text="0원"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#FFFFFF"
+                android:onClick="clearItem"
+                android:text="🗑전체 삭제"
+                android:textColor="#615F5F"
+                android:textSize="5pt"
+                app:strokeColor="#A29D9D"
+                app:strokeWidth="1pt" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="102dp"
+                android:layout_height="71dp"
+                android:layout_gravity="center"
+                android:layout_margin="2pt"
+                android:backgroundTint="#6E8CD7"
+                android:text="결제"
+                android:textSize="12pt"
+                app:cornerRadius="3pt" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

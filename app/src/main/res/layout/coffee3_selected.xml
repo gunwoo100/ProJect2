@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/food_image3"
+            android:layout_width="134dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="10pt"
+            android:layout_marginTop="10pt"
+            android:background="#F8CC8E"
+            app:srcCompat="@drawable/coffee11" />
+
+        <TextView
+            android:id="@+id/food_name3"
+            android:layout_width="189dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8pt"
+            android:layout_marginTop="12pt"
+            android:text="클래식 아포가토\n\n3,000원"
+            android:textSize="9pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10pt"
+        android:layout_marginTop="5pt"
+        android:layout_marginEnd="10pt"
+        android:text="바닐라 아이스크림이나 젤라토에 뜨거운 에스프레소를 부어 만드는 커피 디저트입니다. 커피의 쌉쌀함과 아이스크림의 달콤함이 어우러진 커피 디저트입니다."
+        android:textColor="#ABABAB"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="2pt"
+        android:layout_marginTop="2pt"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:srcCompat="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10pt"
+            android:layout_marginTop="5pt"
+            android:text="HOT/ICE"
+            android:textSize="9pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5pt"
+            android:layout_marginTop="5pt"
+            android:background="#FAE7CB"
+            android:gravity="center"
+            android:text="필수 2개 이상 선택"
+            android:textColor="#E4B22B"
+            android:textSize="6pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+
+            <RadioButton
+                android:id="@+id/rb_hot3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:checked="true"
+                android:text="HOT(0원)" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:text="ICE(1,000원)" />
+        </RadioGroup>
+
+    </LinearLayout>
+</LinearLayout>

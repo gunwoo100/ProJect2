@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_shape"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/food_image"
+                android:layout_width="134dp"
+                android:layout_height="143dp"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="10pt"
+                android:background="#F8CC8E"
+                app:srcCompat="@drawable/coffee1" />
+
+            <TextView
+                android:id="@+id/food_name"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8pt"
+                android:layout_marginTop="12pt"
+                android:text="콜드 브루 플로트 \n\n3,000원"
+                android:textSize="9pt"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginEnd="10pt"
+            android:text="시원한 콜드 브루 커피와 부드러운 아이스크림의 조합으로, 여름철에 즐기기 좋은 달콤한 음료입니다. 이 독특한 음료는 커피의 깊은 풍미와 아이스크림의 크리미한 맛을 동시에 제공합니다."
+            android:textColor="#ABABAB"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="2pt"
+            android:layout_marginTop="2pt"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            app:srcCompat="@drawable/line" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10pt"
+                        android:layout_marginTop="5pt"
+                        android:text="HOT/ICE"
+                        android:textSize="9pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="121dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5pt"
+                        android:layout_marginTop="5pt"
+                        android:background="#FAE7CB"
+                        android:gravity="center"
+                        android:text="필수 2개 이상 선택"
+                        android:textColor="#E4B22B"
+                        android:textSize="6pt"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RadioButton
+                            android:id="@+id/rb_hot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10pt"
+                            android:buttonTint="#C55050"
+                            android:checked="true"
+                            android:clickable="true"
+                            android:scaleX="1.2"
+                            android:scaleY="1.2"
+                            android:text="Hot(0원)" />
+
+                        <RadioButton
+                            android:id="@+id/rb_Ice"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="11pt"
+                            android:scaleX="1.2"
+                            android:scaleY="1.2"
+                            android:text="ICE(1,000원)" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
