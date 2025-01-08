@@ -88,17 +88,11 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 --- void setCategoryColor(Button G1,Button G2,Button G3,Button G4,Button G5,Button B1){ 
          
          G1.setTextColor(Color.parseColor("#878282"));
-         
          G2.setTextColor(Color.parseColor("#878282"));
-         
          G3.setTextColor(Color.parseColor("#878282"));
-         
          G4.setTextColor(Color.parseColor("#878282"));
-         
          G5.setTextColor(Color.parseColor("#878282"));
-         
          B1.setTextColor(Color.parseColor("#000000"));
-     
      } ---  ///상단의 버튼(베스트,커피,..)을 눌렀을때 색깔을 바꿔주는 함수
 
       buttonBestMenu.setOnClickListener(new View.OnClickListener() {...}
