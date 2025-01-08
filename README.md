@@ -25,7 +25,7 @@
   
   **그래서 "위, 중간, 아래"로 나누어서 하나씩 설명할 예정이다.**
 
-**참고 ⬇**
+**참고 🔽**
 
 
     View XMLView(int idLayout){
@@ -85,7 +85,7 @@
 
 ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머지는 회색으로 변한다.)  --> 사용자가 버튼을 눌렸을때 버튼이 눌렸는지 쉽게 알 수 있다.
 
-아래의 코드는 색깔을 바뀌게 해주는 함수이다.
+아래의 코드는 색깔을 바뀌게 해주는 함수이다.🔽
 
     void setCategoryColor(Button G1,Button G2,Button G3,Button G4,Button G5,Button B1){ 
              G1.setTextColor(Color.parseColor("#878282"));
@@ -121,7 +121,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
  --먼저 커피,논커피,...에 대한 화면을 프래그먼트로 각각 만든 다음에
    커피버튼을 누르면 커피 프래그먼트만 뜨고 나머지는 보이지 않게 코드를 작성했다.
 
-아래코드는 위에서 언급한 내용을 구현한 것이다.
+아래코드는 위에서 언급한 내용을 구현한 것이다.🔽
 
     void Remove_AND_AddView(View A1){
         ((FrameLayout) viewKoreaMenu.findViewById(R.id.Frame_Layout)).removeAllViews();
@@ -148,7 +148,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     --> 리사이클러 뷰를 활용해서 화면 틀만 만든 다음에 
         어뎁터에 데이터를 넘겨주면 작업량도 줄고 메뉴가 추가될때 리스트에다가 추가만 해주면 문제점을 해결할 수 있을거 같다.
 
-아래코드는 위에서 언급한 내용을 구현한 코드이다.
+아래코드는 위에서 언급한 내용을 구현한 코드이다.🔽
 
     void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
