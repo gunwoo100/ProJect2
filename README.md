@@ -13,11 +13,11 @@
 
 # • 1. 앱의 맨 앞부분
 ![화면 캡처 2025-01-08 175715](https://github.com/user-attachments/assets/530d5d6d-59ae-48e1-9656-ec58e3fed7b6)      
-• 매장,포장버튼 : ImageButton
+**• 매장,포장버튼 : ImageButton**
 
-• 레이아웃 : ConstraintLayout
+**• 레이아웃 : ConstraintLayout**
 
-• 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)
+**• 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)**
 
 
 # • 2. 메뉴 선택 화면(⏱)
@@ -77,12 +77,12 @@
 
 ![화면 캡처 2025-01-08 194712](https://github.com/user-attachments/assets/40c4e4fa-75d9-4bda-895e-7a555abbace1)
 
-• 상단의 버튼은 imageButton,Button를 사용하고, 
+**• 상단의 버튼은 imageButton,Button를 사용하고,**
 
-  LinearLayout(가,세)과/와 margin값을 조정하면서 버튼들을 배치했다. (▲ 하나하나 배치하다 보니 시간이 너무 오래 걸린 문제점이 있었다(거의 1시간 소요됨).)
+**LinearLayout(가,세)과/와 margin값을 조정하면서 버튼들을 배치했다. (🟥 하나하나 배치하다 보니 시간이 너무 오래 걸린 문제점이 있었다(거의 1시간 소요됨).)**
 
   
-• 상단의 버튼을 누르면 색깔이 바뀐다.   
+**• 상단의 버튼을 누르면 색깔이 바뀐다.**   
 
 ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머지는 회색으로 변한다.)  --> 사용자가 버튼을 눌렸을때 버튼이 눌렸는지 쉽게 알 수 있다.
 
@@ -117,7 +117,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 ![2](https://github.com/user-attachments/assets/f4258631-6a05-4232-b1d1-8415903e3157)
 
-•상단의 버튼을 눌렀을때 해당되는 화면이 뜬다(ex)커피버튼 클릭-->커피만 표시되는 화면이 나옴)
+**•상단의 버튼을 눌렀을때 해당되는 화면이 뜬다(ex)커피버튼 클릭-->커피만 표시되는 화면이 나옴)**
 
  --먼저 커피,논커피,...에 대한 화면을 프래그먼트로 각각 만든 다음에
    커피버튼을 누르면 커피 프래그먼트만 뜨고 나머지는 보이지 않게 코드를 작성했다.
@@ -145,9 +145,9 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
   사용자에게 hot과 cold둘 중 하나 선택할 수 있도록 라디오 버튼으로 두었다.(추가적인 옵션은 생략함)
 
   --다이얼로그화면은 하나씩 만듦 
-    --> ▲하나씩 만들경우 나중에 커피개수가 많아지면 만들어야 될 다이얼로그화면이 많아져서 작업량이 많아질 수 있다는 문제점이 있다.
+    --> 🟥하나씩 만들경우 커피개수가 많아지면 만들어야 될 다이얼로그화면이 많아져서 작업량이 많아질 수 있다는 문제점이 있다.
     --> 리사이클러 뷰를 활용해서 화면 틀만 만든 다음에 
-        어뎁터에 데이터를 넘겨주면 작업량도 줄고 메뉴가 추가될때 리스트에다가 추가만 해주면 문제점을 해결할 수 있을거 같다.
+        어뎁터에 데이터를 넘겨주기만 해주면 작업량도 줄고 메뉴가 추가될때 리스트에다가 추가만 해주면 됨으로 문제점을 해결할 수 있을거 같다.
 
 아래코드는 위에서 언급한 내용을 구현한 코드이다.🔽
 
@@ -193,21 +193,21 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 ![화면 캡처 2025-01-09 085936](https://github.com/user-attachments/assets/72edb573-fc64-48ac-89c5-62db9cbc6e37)
 
-이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 글씨거 삐져나오는 경우도 있었고, 데이터가 제대로 전송이 되지 않는 경우도 있어서 짜증났지만 
+**이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 글씨가 삐져나오는 경우도 있었고, 데이터가 제대로 전송이 되지 않는 경우도 있어서 짜증났지만** 
 
-계속 수정하면서 결국엔 완성했다.
-
-• 우선 위의 사진처럼 버튼이랑 텍스트를 LinearLayout을 이용해서 배치했다.
+**계속 수정하면서 결국엔 완성했다.**
 
 ![4](https://github.com/user-attachments/assets/6f1e0c99-72a4-4b18-9fb9-225c5650ea92)
 
+**• 우선 위의 사진처럼 버튼이랑 텍스트,리사이클러뷰는 LinearLayout을 이용해서 배치했다.**
+
 ![1](https://github.com/user-attachments/assets/cbec86be-952b-42a6-9ee6-df4707a911ff)
 
-• 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 반복적으로 사용되기 때문에 
-  뷰의 배치틀을 재활용하는(?) 리사이클러뷰를 사용했다.
+**• 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 아래에 추가되기 때문에 
+  뷰의 배치틀을 재활용하는(?) 리사이클러뷰를 사용했다.**
 
-• 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
-  그리고 그 장바구니에는 CoffeeDataSelected타입의 객체를 담는다.
+**• 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
+  그리고 그 장바구니에는 CoffeeDataSelected타입의 객체를 담는다.**
 
 아래는 위에서 설명한 내용을 구현한 코드이다.🔽
 
@@ -216,13 +216,13 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                                    •••
     List<CoffeeSelectedData> coffeeSelected = new ArrayList<>();  ///장바구니와 비슷함
 
-    ▲처음에는 장바구니 역활을 배열로 할려다가 배열로 하게 되면 배열에다 추가하고 지우는 작업이 번거로워지므로
+    🟥처음에는 장바구니 역활을 배열로 할려다가 배열로 하게 되면 배열에 데이터를 추가하고 지우는 작업이 번거로워지므로
     -->ArrayList로 변경
 
     CoffeeSelectedData coffee1,coffee2,coffee3,coffee4,coffee5,coffee6,coffee7,coffee8;
                                    •••
     
-    --화면에 나오는 커피를 객체로 표현--
+    --화면에 나오는 커피(상품)을/를 객체로 표현--
     
     coffee1 = new CoffeeSelectedData("콜드 브루 플로트(HOT)",0,0);
     coffee2 = new CoffeeSelectedData("콜드 브루 플로트(COLD)",0,0);
@@ -237,9 +237,10 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     coffee8 = new CoffeeSelectedData("프랜티 애플 타르트 나이트로(COLD)",0,0);
 
     ⁕ 객체의 속성 : 1.coffeeN : 해당 커피의 이름(h/c)
-                   2.coffeeQ : 사용자가 해당 메뉴를 선택한 갯수
+                   2.coffeeQ : 사용자가 고른 커피의 총 갯수
                    3.coffeeP : 그만큼의 가격
-    }
+    }  
+  *커피의 갯수와 가격을 0으로 설정한 이유는 나중에 총합을 계산할때 편리해짐으로 0으로 설정했다.*
 
 //----------------------------------------------------------------------------------------
   
@@ -274,12 +275,16 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
         public void setCoffeeP(int coffeeP) {
             this.coffeeP = coffeeP;
-        }
+        }   ///SETTER
       }
 
-• 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 누르면 커피가 리스트에 추가가 되고 해당커피의 갯수와 가격이(객체의 속성이(coffeeP,coffeeQ)) 증가되게 했다.
 
-• 그러고 난 후 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
+
+• **그 다음은 MakeDialog에서 사용자가 "*장바구니에 담기*"버튼을(positiveButton)을 누르면 커피가 리스트에 추가, 해당커피의 갯수와 가격이(객체의 속성이(coffeeP,coffeeQ)) 증가, 
+  MakeDialog함수내에서 사용자가 고른 커피의 총 가격과 총 갯수도 표시되도록 구현했다.**
+  
+
+• **그러고 난 후 커피 리스트를 어뎁터를 통해 전달해준다.🔽**
 
     void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -291,7 +296,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                     RadioButton rb = dialogView.findViewById(rb_id);
 
                     if (rb.isChecked()){  //여기서 rb버튼은 라디오 버튼중 hot버튼에 해당된다
-                        if(coffeeSelected.contains(coffeeH)){
+                        if(coffeeSelected.contains(coffeeH)){  //만약에 리스트 안에 같은커피가 있으면 추가하지 않고 속성만 설정
                             coffeeHQ = coffeeH.getCoffeeQ();
 
                             coffeeHQ++;             //갯수 추가
@@ -344,8 +349,29 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                     dialog.dismiss();
                     // Handle Cancel button click
                 });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+
+        totalP = coffee1.getCoffeeP()
+                    +coffee2.getCoffeeP()
+                    +coffee3.getCoffeeP()
+                    +coffee4.getCoffeeP()
+                    +coffee5.getCoffeeP()
+                    +coffee6.getCoffeeP()
+                    +coffee7.getCoffeeP()
+                    +coffee8.getCoffeeP();  //총 가격 합치기
+
+        totalQ = coffee1.getCoffeeQ()
+                    +coffee2.getCoffeeQ()
+                    +coffee3.getCoffeeQ()
+                    +coffee4.getCoffeeQ()
+                    +coffee5.getCoffeeQ()
+                    +coffee6.getCoffeeQ()
+                    +coffee7.getCoffeeQ()
+                    +coffee8.getCoffeeQ();  //총 갯수 합치기
+
+            tv_amount.setText("총 "+""+totalQ+"개 선택");
+            tv_price.setText(""+totalP+"원");    //총 가격과 갯수를 설정
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
     }
 
 
@@ -398,10 +424,140 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     
 }
 
-이렇게하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)
+**이렇게하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)**
 
 • ![5](https://github.com/user-attachments/assets/d48cd7a0-a1f6-4e53-afae-d84010a48061)
 
+*이제 버튼을 어떻게 구현했는지 설명하겠다.*
+
+• 우선 플러스 버튼과 마이너스 버튼(ImageButton)에다 setOnClickListener를 붙여서 버튼을 누르면
+  커피객체의 속성값이 증가하고, 총가격과 총갯수도 설정해줘야된다(.setText()).
+
+  그러기 위해서는 플러스 버튼,마이너스 버튼의 id와 viewKoreaMenu(
+
+다음은 위에서 말한 내용을 코드로 구현하였다.🔽
+
+    public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
+        List<CoffeeSelectedData> coffeeSelectedList;
+        View Kview;
+        TextView TP,TQ;
+        TextView testTP,testTA;
+        ImageButton plus,minus;
+        int tPrice,tAmount;
+        int testN,testP;
+
+        public RvAdapter(List<CoffeeSelectedData> coffeeSelectedList, View Kview ) {
+            this.Kview=Kview;
+            this.coffeeSelectedList = coffeeSelectedList;
+        }
+
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+            View view = inflater.inflate(R.layout.rv_item_baseket,parent,false);
+
+            testTP = Kview.findViewById(R.id.textPrice);
+            testTA = Kview.findViewById(R.id.textAmount);          //오른쪽 하단의 총 갯수와 가격을 표시하는 textView
+
+            TextView TP = view.findViewById(R.id.sum_price);
+            TextView TQ = view.findViewById(R.id.coffee_amount);   //왼쪽 하단의 커피 가격과 갯수
+
+            TextView NAME = view.findViewById(R.id.coffee_name);
+
+            plus = view.findViewById(R.id.plusButton);
+            minus = view.findViewById(R.id.minusButton);
+
+            plus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    minus.setEnabled(true);
+                    for (int i = 0; i < coffeeSelectedList.size(); i++) {
+                        if(coffeeSelectedList.get(i).getCoffeeN().equals(NAME.getText().toString())){
+                            if(coffeeSelectedList.get(i).getCoffeeN().contains("(COLD)")){
+                                testN=coffeeSelectedList.get(i).getCoffeeQ();
+                                testN++;
+                                testP=testN*4000;
+
+                                coffeeSelectedList.get(i).setCoffeeQ(testN);
+                                coffeeSelectedList.get(i).setCoffeeP(testP);
+                                TQ.setText(""+coffeeSelectedList.get(i).getCoffeeQ());
+                                TP.setText(""+coffeeSelectedList.get(i).getCoffeeP());
+                        
+                            }
+                            else if(coffeeSelectedList.get(i).getCoffeeN().contains("(HOT)")) {
+                                testN=coffeeSelectedList.get(i).getCoffeeQ();
+                                testN++;
+                                testP=testN*3000;
+                                coffeeSelectedList.get(i).setCoffeeQ(testN);
+                                coffeeSelectedList.get(i).setCoffeeP(testP);
+                                TQ.setText(""+coffeeSelectedList.get(i).getCoffeeQ());
+                                TP.setText(""+coffeeSelectedList.get(i).getCoffeeP());
+
+                            }
+                        }
+                        for (int j = 0; j <coffeeSelectedList.size() ; j++) {
+                            int test = coffeeSelectedList.get(j).getCoffeeP();
+                            int test2 = coffeeSelectedList.get(j).getCoffeeQ();
+                            Log.v("MYTAGS",String.valueOf(coffeeSelectedList.get(j).getCoffeeP()));
+                            tPrice+=test;
+                            tAmount+=test2;
+                        }
+                        testTP.setText(""+tPrice+"원");
+                        testTA.setText("총 "+tAmount+"개 선택");
+                        tPrice=0;
+                    tAmount=0;
+                    }
+
+                    Log.v("TESTTEXT",""+testTP.getText().toString());
+                }});
+            minus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for (int i = 0; i < coffeeSelectedList.size(); i++) {
+                        if(coffeeSelectedList.get(i).getCoffeeN().equals(NAME.getText().toString())){
+                            if(coffeeSelectedList.get(i).getCoffeeN().contains("(COLD)")){
+                                Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
+                                testN=coffeeSelectedList.get(i).getCoffeeQ();
+                                testN--;
+                                testP=testN*4000;
+                                coffeeSelectedList.get(i).setCoffeeQ(testN);
+                                coffeeSelectedList.get(i).setCoffeeP(testP);
+                                TQ.setText(""+coffeeSelectedList.get(i).getCoffeeQ());
+                                TP.setText(""+coffeeSelectedList.get(i).getCoffeeP());
+                            }
+                            else {
+                                Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
+                                testN=coffeeSelectedList.get(i).getCoffeeQ();
+                                testN--;
+                                testP=testN*3000;
+                                coffeeSelectedList.get(i).setCoffeeQ(testN);
+                                coffeeSelectedList.get(i).setCoffeeP(testP);
+                                TQ.setText(""+coffeeSelectedList.get(i).getCoffeeQ());
+                                TP.setText(""+coffeeSelectedList.get(i).getCoffeeP());
+                            }
+
+                        }
+                        for (int j = 0; j <coffeeSelectedList.size() ; j++) {
+                            int test = coffeeSelectedList.get(j).getCoffeeP();
+                            int test2 = coffeeSelectedList.get(j).getCoffeeQ();
+                            Log.v("MYTAGS",String.valueOf(coffeeSelectedList.get(j).getCoffeeP()));
+                            tPrice+=test;
+                            tAmount+=test2;
+                        }
+                        testTP.setText(""+tPrice+"원");
+                        testTA.setText("총 "+tAmount+"개 선택");
+                        tPrice=0;
+                        tAmount=0;
+
+                    }
+                    if (testP==0){
+                        minus.setEnabled(false);
+                    }}
+            });
+            
+            return new MyViewHolder(view);
+        }
 
 
 
