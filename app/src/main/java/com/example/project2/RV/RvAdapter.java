@@ -31,7 +31,6 @@ public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public RvAdapter(List<CoffeeSelectedData> coffeeSelectedList, View Kview ) {
         this.Kview=Kview;
         this.coffeeSelectedList = coffeeSelectedList;
-
     }
 
     @NonNull
@@ -48,7 +47,7 @@ public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
         TextView NAME = view.findViewById(R.id.coffee_name);
 
-        ImageButton plus = view.findViewById(R.id.plusButton);
+        plus = view.findViewById(R.id.plusButton);
         minus = view.findViewById(R.id.minusButton);
 
         plus.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +57,6 @@ public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 for (int i = 0; i < coffeeSelectedList.size(); i++) {
                     if(coffeeSelectedList.get(i).getCoffeeN().equals(NAME.getText().toString())){
                         if(coffeeSelectedList.get(i).getCoffeeN().contains("(COLD)")){
-                            Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
                             testN=coffeeSelectedList.get(i).getCoffeeQ();
                             testN++;
                             testP=testN*4000;
@@ -70,7 +68,6 @@ public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
                         }
                         else if(coffeeSelectedList.get(i).getCoffeeN().contains("(HOT)")) {
-                            Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
                             testN=coffeeSelectedList.get(i).getCoffeeQ();
                             testN++;
                             testP=testN*3000;
