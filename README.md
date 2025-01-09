@@ -187,6 +187,8 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             MakeDialog(R.layout.coffee5_selected,coffee7,coffee8,R.id.rb_hot5);
         }  ///해당 메뉴를 눌렀을때 MakeDialog함수를 실행함
 
+![3](https://github.com/user-attachments/assets/9e14a8ce-6739-4cd9-9313-e072203086c9)
+
 # 2-3. 하단 부분(🎇)
 
 ![화면 캡처 2025-01-09 085936](https://github.com/user-attachments/assets/72edb573-fc64-48ac-89c5-62db9cbc6e37)
@@ -268,7 +270,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 • 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 눌렀을때 리스트에 추가가 되고 커피 속성(coffeeQ,coffeeP)이 하나 증가된다.
 
-  그런 다음에 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
+  그러고 난 후 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
 
     void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -279,7 +281,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                 .setPositiveButton("장바구니에 담기", (dialog, which) -> {
                     RadioButton rb = dialogView.findViewById(rb_id);
 
-                    if (rb.isChecked()){
+                    if (rb.isChecked()){  //여기서 rb버튼은 라디오 버튼중 hot버튼에 해당된다
                         if(coffeeSelected.contains(coffeeH)){
                             coffeeHQ = coffeeH.getCoffeeQ();
 
@@ -289,7 +291,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                             coffeeH.setCoffeeQ(coffeeHQ);
                             coffeeH.setCoffeeP(coffeeHPrice);
 
-                            adapter = new RvAdapter(coffeeSelected,viewKoreaMenu);  //viewKoreaMenu는 아래에서 설명할 예정
+                          ▶adapter = new RvAdapter(coffeeSelected,viewKoreaMenu);  //viewKoreaMenu는 아래에서 설명할 예정
                             recyclerView.setAdapter(adapter);
                         }
                         else{
@@ -302,41 +304,76 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                             coffeeH.setCoffeeP(coffeeHPrice);
 
                             ** coffeeSelected.add(coffeeH); **  //Selected리스트에 추가하기
-                    }
+                    }else{
+                        if(coffeeSelected.contains(coffeeC)){
+                            coffeeCQ = coffeeC.getCoffeeQ();
+
+                            coffeeCQ++;
+                            coffeeCPrice=coffeeCQ*4000;
+
+                            coffeeC.setCoffeeQ(coffeeCQ);
+                            coffeeC.setCoffeeP(coffeeCPrice);
+
+                            adapter = new RvAdapter(coffeeSelected,viewKoreaMenu);
+                            recyclerView.setAdapter(adapter);
+                        }
+                        else{
+                            coffeeCQ = coffeeC.getCoffeeQ();
+
+                            coffeeCQ++;
+                            coffeeCPrice=coffeeCQ*4000;
+
+                            coffeeC.setCoffeeQ(coffeeCQ);
+                            coffeeC.setCoffeeP(coffeeCPrice);
+
+                            coffeeSelected.add(coffeeC);  //Selected리스트에 추가하기
+                            adapter = new RvAdapter(coffeeSelected,viewKoreaMenu);
+                            recyclerView.setAdapter(adapter);
+                        }
+                    }  //if문 끝나는 지점
+                    .setNegativeButton("취소", (dialog, which) -> {
+                    dialog.dismiss();
+                    // Handle Cancel button click
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 
 리사이클러 뷰🔽
-    public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
-        List<CoffeeSelectedData> coffeeSelectedList;
-    •••
+    
+        public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
+            List<CoffeeSelectedData> coffeeSelectedList;
+        •••
     
 
-    public RvAdapter(List<CoffeeSelectedData> coffeeSelectedList, View Kview ) {
-        this.coffeeSelectedList = coffeeSelectedList;
+        public RvAdapter(List<CoffeeSelectedData> coffeeSelectedList, View Kview ) {
+            this.coffeeSelectedList = coffeeSelectedList;
+        }
+
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+            View view = inflater.inflate(R.layout.rv_item_baseket,parent,false);
+            return new MyViewHolder(view);
+
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+            CoffeeSelectedData coffee = coffeeSelectedList.get(position);
+            holder.tv_name.setText(coffee.getCoffeeN());      //커피의 이름
+            holder.tv_price.setText(""+coffee.getCoffeeP());  //커피의 가격
+            holder.tv_qu.setText(""+coffee.getCoffeeQ());     //커피 갯수
+        }
+
+        @Override
+        public int getItemCount() {
+            return coffeeSelectedList.size();
+        }
     }
 
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.rv_item_baseket,parent,false);
-        return new MyViewHolder(view);
-
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        CoffeeSelectedData coffee = coffeeSelectedList.get(position);
-        holder.tv_name.setText(coffee.getCoffeeN());      //커피의 이름
-        holder.tv_price.setText(""+coffee.getCoffeeP());  //커피의 가격
-        holder.tv_qu.setText(""+coffee.getCoffeeQ());     //커피 갯수
-    }
-
-    @Override
-    public int getItemCount() {
-        return coffeeSelectedList.size();
-    }
-}
 이렇게 작성하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)
 
 ![1](https://github.com/user-attachments/assets/8b80369c-4fd1-4420-8523-bc3d9186a4f8)
