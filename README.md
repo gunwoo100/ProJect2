@@ -20,7 +20,7 @@
 • 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)
 
 
-# • 메뉴 선택 화면(⏱)
+# • 2. 메뉴 선택 화면(⏱)
 **매뉴 선택 화면에서 구현해야되는게 생각한것보다 너무 많아서 설명해야될 부분이 많다.**
   
   **그래서 "위, 중간, 아래"로 나누어서 하나씩 설명할 예정이다.**
@@ -69,11 +69,11 @@
 
 
 
-# • 2. 최종 메뉴 선택화면
+# • 최종 메뉴 선택화면
 ![화면 캡처 2025-01-08 180715](https://github.com/user-attachments/assets/ebe010f8-b1db-46e0-8337-d49fe7dcb101) ![화면 캡처 2025-01-08 181043](https://github.com/user-attachments/assets/ff5cb2f5-47d7-4e92-807f-a4aa6a13d137)
 
 
-# 2-1. 윗 부분
+# • 2-1. 윗 부분
 
 ![화면 캡처 2025-01-08 194712](https://github.com/user-attachments/assets/40c4e4fa-75d9-4bda-895e-7a555abbace1)
 
@@ -113,7 +113,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             
 
 
-# 2-2. 중간부분
+# • 2-2. 중간부분
 
 ![2](https://github.com/user-attachments/assets/f4258631-6a05-4232-b1d1-8415903e3157)
 
@@ -189,15 +189,21 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 ![3](https://github.com/user-attachments/assets/9e14a8ce-6739-4cd9-9313-e072203086c9)
 
-# 2-3. 하단 부분(🎇)
+# • 2-3. 하단 부분(🎇)
 
 ![화면 캡처 2025-01-09 085936](https://github.com/user-attachments/assets/72edb573-fc64-48ac-89c5-62db9cbc6e37)
 
-이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 
+이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 굴싸거 삐져나오는 경우도 있었고, 데이터가 제대로 전송이 되지 않는 경우도 있어서 짜증났지만 
+
+계속 수정하면서 결국엔 완성했다.
+
+• 우선 위의 사진처럼 버튼이랑 텍스트를 LinearLayout을 이용해서 배치했다.
+
+![4](https://github.com/user-attachments/assets/6f1e0c99-72a4-4b18-9fb9-225c5650ea92)
 
 ![1](https://github.com/user-attachments/assets/cbec86be-952b-42a6-9ee6-df4707a911ff)
 
-• 제일먼저 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 반복적으로 사용되기 때문에 
+• 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 반복적으로 사용되기 때문에 
   뷰의 배치틀을 재활용하는(?) 리사이클러뷰를 사용했다.
 
 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
