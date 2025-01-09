@@ -266,6 +266,39 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
         }
       }
 
+• 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 눌렀을때 리스트에 추가가 되고 커피 속성(coffeeQ,coffeeP)이 하나 증가된다. 🔽
+
+    void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(layout, null); // xml명 변경
+        builder.setView(dialogView)
+                .setTitle("")
+                .setPositiveButton("장바구니에 담기", (dialog, which) -> {
+                    RadioButton rb = dialogView.findViewById(rb_id);
+
+                    if (rb.isChecked()){
+                        if(coffeeSelected.contains(coffeeH)){
+                            coffeeHQ = coffeeH.getCoffeeQ();
+
+                            coffeeHQ++;             //갯수 추가
+                            coffeeHPrice=coffeeHQ*3000;     //3000원 추가
+
+                            coffeeH.setCoffeeQ(coffeeHQ);
+                            coffeeH.setCoffeeP(coffeeHPrice);
+                        }
+                        else{
+                            coffeeHQ = coffeeH.getCoffeeQ();
+
+                            coffeeHQ++;          //갯수 추가
+                            coffeeHPrice=coffeeHQ*3000;  //3000원 추가
+
+                            coffeeH.setCoffeeQ(coffeeHQ);
+                            coffeeH.setCoffeeP(coffeeHPrice);
+
+                            ** coffeeSelected.add(coffeeH); **  //Selected리스트에 추가하기
+                    }
+
 
     
 
