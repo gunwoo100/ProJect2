@@ -18,7 +18,19 @@
 **• 레이아웃 : ConstraintLayout**
 
 **• 버튼을 눌렀을때 메뉴 선택 화면으로 이동한다(activity_main_foodMenu_Korean)**
-\n
+
+    viewMain.findViewById(R.id.ForHereButton).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setContentView(viewKoreaMenu);
+                }
+            });
+            viewMain.findViewById(R.id.ToGoButton).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setContentView(viewKoreaMenu);
+                }
+            });
 
 # • 2. 메뉴 선택 화면(⏱)
 **매뉴 선택 화면에서 구현해야되는게 생각한것보다 너무 많아서 설명해야될 부분이 많다.**
