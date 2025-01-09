@@ -242,7 +242,9 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     }
 
 //----------------------------------------------------------------------------------------
+  
   -- coffee클래스--
+  
     public class CoffeeSelectedData implements Parcelable {
         //Parcelable :  **뒤에서 설명예정**
         String coffeeN;
@@ -275,7 +277,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
         }
       }
 
-• 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 눌렀을때 리스트에 추가가 되고 커피 속성(coffeeQ,coffeeP)이 하나 증가된다.
+• 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 누르면 커피가 리스트에 추가가 되고 해당커피의 갯수와 가격이(객체의 속성이(coffeeP,coffeeQ)) 증가되게 했다.
 
 • 그러고 난 후 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
 
@@ -381,11 +383,26 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
         }
     }
 
-이렇게 작성하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)
+--Holder코드🔽
 
-![1](https://github.com/user-attachments/assets/8b80369c-4fd1-4420-8523-bc3d9186a4f8)
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+    TextView tv_name,tv_price,tv_qu;
+
+    public MyViewHolder(View itemView) {
+        super(itemView);
+        tv_name = itemView.findViewById(R.id.coffee_name);
+        tv_price = itemView.findViewById(R.id.sum_price);
+        tv_qu = itemView.findViewById(R.id.coffee_amount);
+        
+    }
+    
+}
+
+이렇게하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)
 
 • ![5](https://github.com/user-attachments/assets/d48cd7a0-a1f6-4e53-afae-d84010a48061)
+
+
 
 
 
