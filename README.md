@@ -195,8 +195,8 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 ![1](https://github.com/user-attachments/assets/cbec86be-952b-42a6-9ee6-df4707a911ff)
 
-• 제일먼저 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 **동적**으로 추가되기 때문에 
-  틀을 재활용하는(?) 리사이클러뷰를 사용했다.
+• 제일먼저 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 반복적으로 사용되기 때문에 
+  뷰의 배치틀을 재활용하는(?) 리사이클러뷰를 사용했다.
 
 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
 그리고 그 장바구니에는 CoffeeDataSelected타임의 객체를 담는다.
@@ -207,6 +207,9 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
                                    •••
     List<CoffeeSelectedData> coffeeSelected = new ArrayList<>();  ///장바구니와 비슷함
+
+    ▲처음에는 장바구니 역활을 배열로 할려다가 배열로 하게 되면 배열에다 추가하고 지우는 작업이 번거로워지므로
+    -->ArrayList로 변경
 
     CoffeeSelectedData coffee1,coffee2,coffee3,coffee4,coffee5,coffee6,coffee7,coffee8;
                                    •••
