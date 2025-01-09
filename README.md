@@ -261,7 +261,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     public void setCoffeeP(int coffeeP) {
         this.coffeeP = coffeeP;
     }
-}
+  }
 
 
     
