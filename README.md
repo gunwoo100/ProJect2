@@ -22,7 +22,7 @@
     viewMain.findViewById(R.id.ForHereButton).setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            setContentView(viewKoreaMenu);
+            setContentView(viewKoreaMenu);  //viewKoreaMenu==activity_main_foodMenu_Korean
          }
     });
     viewMain.findViewById(R.id.ToGoButton).setOnClickListener(new View.OnClickListener() {
