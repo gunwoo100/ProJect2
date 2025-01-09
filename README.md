@@ -198,22 +198,73 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 • 제일먼저 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 **동적**으로 추가되기 때문에 
   틀을 재활용하는(?) 리사이클러뷰를 사용했다.
 
-아래는 리사이클러뷰 코드의 틀을 보여준다.🔽
+우선 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList를 먼저 만들었다.
+그리고 그 장바구니에는 CoffeeDataSelected타임의 객체를 담는다.
 
-    package com.example.project2.RV;
+아래는 위에서 설명한 내용의 코드이다.🔽
 
-    import•••
+    public class MainActivity extends AppCompatActivity {
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_name,tv_price,tv_qu;
+                                   •••
+    List<CoffeeSelectedData> coffeeSelected = new ArrayList<>();  ///장바구니와 비슷함
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            tv_name = itemView.findViewById(R.id.coffee_name);  //상단의 사진에서 커피이름에 해당
-            tv_price = itemView.findViewById(R.id.sum_price);   //상단의 사진에서 커피가격에 해당
-            tv_qu = itemView.findViewById(R.id.coffee_amount);  //상단의 사진에서 사용자가 해당커피를 고른 갯수이다
-        }
-    } <viewHolder를 만드는 과정>
+    CoffeeSelectedData coffee1,coffee2,coffee3,coffee4,coffee5,coffee6,coffee7,coffee8;
+                                   •••
+    
+
+    coffee1 = new CoffeeSelectedData("콜드 브루 플로트(HOT)",0,0);
+    coffee2 = new CoffeeSelectedData("콜드 브루 플로트(COLD)",0,0);
+
+    coffee3 = new CoffeeSelectedData("라벤더 카페 브레베(HOT)",0,0);
+    coffee4 = new CoffeeSelectedData("라벤더 카페 브레베(COLD)",0,0);
+
+    coffee5 = new CoffeeSelectedData("클래식 아포가토(HOT)",0,0);
+    coffee6 = new CoffeeSelectedData("클래식 아포가토(COLD)",0,0);
+
+    coffee7 = new CoffeeSelectedData("프랜티 애플 타르트 나이트로(HOT)",0,0);
+    coffee8 = new CoffeeSelectedData("프랜티 애플 타르트 나이트로(COLD)",0,0);
+
+    ///객체의 속성 : 1.coffeeN : 해당 커피의 이름(h/c)
+    ///             2.coffeeQ : 사용자가 해당 메뉴를 선택한 갯수
+    ///             3.coffeeP : 그만큼의 가격
+    }
+
+//----------------------------------------------------------------------------------------
+
+    public class CoffeeSelectedData implements Parcelable {
+    //Parcelable :  *뒤에서 설명예정*
+    String coffeeN;
+    int coffeeQ,coffeeP;
+
+    public CoffeeSelectedData(String coffeeN, int coffeeQ, int coffeeP) {
+        this.coffeeN = coffeeN;
+        this.coffeeQ = coffeeQ;
+        this.coffeeP = coffeeP;
+    }
+
+    public String getCoffeeN() {
+        return coffeeN;
+    }
+
+    public int getCoffeeQ() {
+        return coffeeQ;
+    }
+
+    public int getCoffeeP() {
+        return coffeeP;
+    }   ///GETTER
+
+    public void setCoffeeQ(int coffeeQ) {
+        this.coffeeQ = coffeeQ;
+    }
+
+    public void setCoffeeP(int coffeeP) {
+        this.coffeeP = coffeeP;
+    }
+}
+
+
+    
 
 
 
