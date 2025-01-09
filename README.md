@@ -193,7 +193,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 ![화면 캡처 2025-01-09 085936](https://github.com/user-attachments/assets/72edb573-fc64-48ac-89c5-62db9cbc6e37)
 
-이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 굴싸거 삐져나오는 경우도 있었고, 데이터가 제대로 전송이 되지 않는 경우도 있어서 짜증났지만 
+이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 글씨거 삐져나오는 경우도 있었고, 데이터가 제대로 전송이 되지 않는 경우도 있어서 짜증났지만 
 
 계속 수정하면서 결국엔 완성했다.
 
@@ -206,10 +206,10 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 • 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 반복적으로 사용되기 때문에 
   뷰의 배치틀을 재활용하는(?) 리사이클러뷰를 사용했다.
 
-사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
-그리고 그 장바구니에는 CoffeeDataSelected타입의 객체를 담는다.
+• 사용자가 고른 커피를 담는 장바구니의 역활인 ArrayList도 만들었다.
+  그리고 그 장바구니에는 CoffeeDataSelected타입의 객체를 담는다.
 
-아래는 위에서 설명한 내용의 코드이다.🔽
+아래는 위에서 설명한 내용을 구현한 코드이다.🔽
 
     public class MainActivity extends AppCompatActivity {
 
@@ -222,7 +222,8 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     CoffeeSelectedData coffee1,coffee2,coffee3,coffee4,coffee5,coffee6,coffee7,coffee8;
                                    •••
     
-
+    --화면에 나오는 커피를 객체로 표현--
+    
     coffee1 = new CoffeeSelectedData("콜드 브루 플로트(HOT)",0,0);
     coffee2 = new CoffeeSelectedData("콜드 브루 플로트(COLD)",0,0);
 
@@ -235,15 +236,15 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     coffee7 = new CoffeeSelectedData("프랜티 애플 타르트 나이트로(HOT)",0,0);
     coffee8 = new CoffeeSelectedData("프랜티 애플 타르트 나이트로(COLD)",0,0);
 
-    ///객체의 속성 : 1.coffeeN : 해당 커피의 이름(h/c)
-    ///             2.coffeeQ : 사용자가 해당 메뉴를 선택한 갯수
-    ///             3.coffeeP : 그만큼의 가격
+    ⁕ 객체의 속성 : 1.coffeeN : 해당 커피의 이름(h/c)
+                   2.coffeeQ : 사용자가 해당 메뉴를 선택한 갯수
+                   3.coffeeP : 그만큼의 가격
     }
 
 //----------------------------------------------------------------------------------------
-
+  -- coffee클래스--
     public class CoffeeSelectedData implements Parcelable {
-        //Parcelable :  *뒤에서 설명예정*
+        //Parcelable :  **뒤에서 설명예정**
         String coffeeN;
         int coffeeQ,coffeeP;
 
@@ -276,7 +277,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 • 그 다음은 사용자가 "장바구니에 담기"버튼을(positiveButton)을 눌렀을때 리스트에 추가가 되고 커피 속성(coffeeQ,coffeeP)이 하나 증가된다.
 
-  그러고 난 후 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
+• 그러고 난 후 사용자가 고른 커피가 담긴 리스트를 어뎁터를 통해 전달해준다.🔽
 
     void MakeDialog(int layout,CoffeeSelectedData coffeeH,CoffeeSelectedData coffeeC,int rb_id){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -303,10 +304,10 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                         else{
                             coffeeHQ = coffeeH.getCoffeeQ();
 
-                            coffeeHQ++;          //갯수 추가
-                            coffeeHPrice=coffeeHQ*3000;  //3000원 추가
+                            coffeeHQ++;                  //갯수 추가(장바구니에 담을때마다)
+                            coffeeHPrice=coffeeHQ*3000;  //갯수*원가격(장바구니에 담을때마다)
 
-                            coffeeH.setCoffeeQ(coffeeHQ);
+                            coffeeH.setCoffeeQ(coffeeHQ);     //속성을 설정해준다
                             coffeeH.setCoffeeP(coffeeHPrice);
 
                             ** coffeeSelected.add(coffeeH); **  //Selected리스트에 추가하기
@@ -346,7 +347,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
     }
 
 
-리사이클러 뷰🔽
+--리사이클러 뷰🔽
     
         public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
             List<CoffeeSelectedData> coffeeSelectedList;
@@ -383,6 +384,9 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 이렇게 작성하면 사용자가 "장바구니에 담기" 버튼을 눌렀을때 아래부분에 표시가 된다(추가를 해도 표시된다)
 
 ![1](https://github.com/user-attachments/assets/8b80369c-4fd1-4420-8523-bc3d9186a4f8)
+
+• ![5](https://github.com/user-attachments/assets/d48cd7a0-a1f6-4e53-afae-d84010a48061)
+
 
 
     
