@@ -193,7 +193,28 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 이번 프로젝트 설명글의 메인이자 제일 어려웠던 부분이었다. 
 
-• 우선 제일먼저 리사이클러뷰를 사용해야되겠다는 생각이 들어서 리사이클러뷰 코드틀을 먼저 만들기 시작해다.
+![1](https://github.com/user-attachments/assets/cbec86be-952b-42a6-9ee6-df4707a911ff)
+
+• 제일먼저 사용자가 음식을 장바구니에 담을때마다 위와같은 틀이 **동적**으로 추가되기 때문에 
+  틀을 재활용하는(?) 리사이클러뷰를 사용했다.
+
+아래는 리사이클러뷰 코드의 틀을 보여준다.🔽
+
+    package com.example.project2.RV;
+
+    import•••
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView tv_name,tv_price,tv_qu;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            tv_name = itemView.findViewById(R.id.coffee_name);  //상단의 사진에서 커피이름에 해당
+            tv_price = itemView.findViewById(R.id.sum_price);   //상단의 사진에서 커피가격에 해당
+            tv_qu = itemView.findViewById(R.id.coffee_amount);  //상단의 사진에서 사용자가 해당커피를 고른 갯수이다
+        }
+    } <viewHolder를 만드는 과정>
+
 
 
 
