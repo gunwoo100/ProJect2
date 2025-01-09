@@ -232,36 +232,36 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 //----------------------------------------------------------------------------------------
 
     public class CoffeeSelectedData implements Parcelable {
-    //Parcelable :  *뒤에서 설명예정*
-    String coffeeN;
-    int coffeeQ,coffeeP;
+        //Parcelable :  *뒤에서 설명예정*
+        String coffeeN;
+        int coffeeQ,coffeeP;
 
-    public CoffeeSelectedData(String coffeeN, int coffeeQ, int coffeeP) {
-        this.coffeeN = coffeeN;
-        this.coffeeQ = coffeeQ;
-        this.coffeeP = coffeeP;
-    }
+        public CoffeeSelectedData(String coffeeN, int coffeeQ, int coffeeP) {
+            this.coffeeN = coffeeN;
+            this.coffeeQ = coffeeQ;
+            this.coffeeP = coffeeP;
+        }
 
-    public String getCoffeeN() {
-        return coffeeN;
-    }
+        public String getCoffeeN() {
+            return coffeeN;
+        }
 
-    public int getCoffeeQ() {
-        return coffeeQ;
-    }
+        public int getCoffeeQ() {
+            return coffeeQ;
+        }
 
-    public int getCoffeeP() {
-        return coffeeP;
-    }   ///GETTER
+        public int getCoffeeP() {
+            return coffeeP;
+        }   ///GETTER
 
-    public void setCoffeeQ(int coffeeQ) {
-        this.coffeeQ = coffeeQ;
-    }
+        public void setCoffeeQ(int coffeeQ) {
+            this.coffeeQ = coffeeQ;
+        }
 
-    public void setCoffeeP(int coffeeP) {
-        this.coffeeP = coffeeP;
-    }
-  }
+        public void setCoffeeP(int coffeeP) {
+            this.coffeeP = coffeeP;
+        }
+      }
 
 
     
