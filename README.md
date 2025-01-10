@@ -450,13 +450,19 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 • 우선 플러스 버튼과 마이너스 버튼(ImageButton)에다 setOnClickListener를 붙여서 버튼을 누르면
   커피객체의 속성값이 증가하고, 총가격과 총갯수도 설정해줘야된다(.setText()).
 
-  그러기 위해서는 플러스 버튼,마이너스 버튼의 id와 viewKoreaMenu(
+  그러기 위해서는 플러스 버튼,마이너스 버튼의 id와 viewKoreaMenu(activity_main_foodMenu_Korean)에 
+  
+  총가격과 총갯수를 표시해주는 TextView도 필요하다.
 
 다음은 위에서 말한 내용을 코드로 구현하였다.🔽
 
     public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
         List<CoffeeSelectedData> coffeeSelectedList;
-        View Kview;
+        View Kview;  <--viewKoreaMenu(activity_main_foodMenu_Korean)
+        🟥처음에는 viewKoreaMenu에 있는 TextView를 어떻게 하면 가져올 수 있을까 고민하다가  
+     -->🟩생성자쪽에서 View(viewKoreaMenu)를 받는 인자를 하나 만들면 된다고 선생님께서 말씀해주셔서 View인자를 추가했다.
+        or View view2 = inflater.inflate(R.layout.activity_main_foodmenu_korean,parent,false) **inflate**
+        
         TextView TP,TQ;
         TextView testTP,testTA;
         ImageButton plus,minus;
@@ -465,7 +471,7 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
         public RvAdapter(List<CoffeeSelectedData> coffeeSelectedList, View Kview ) {
             this.Kview=Kview;
-            this.coffeeSelectedList = coffeeSelectedList;
+            this.coffeeSelectedList = coffeeSelectedList;   
         }
 
         @NonNull
@@ -475,15 +481,14 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             View view = inflater.inflate(R.layout.rv_item_baseket,parent,false);
 
             testTP = Kview.findViewById(R.id.textPrice);
-            testTA = Kview.findViewById(R.id.textAmount);          //오른쪽 하단의 총 갯수와 가격을 표시하는 textView
+            testTA = Kview.findViewById(R.id.textAmount);          //viewKoreaMenu에서 총가격과 총갯수를 표시해주는 TextView
 
             TextView TP = view.findViewById(R.id.sum_price);
-            TextView TQ = view.findViewById(R.id.coffee_amount);   //왼쪽 하단의 커피 가격과 갯수
-
-            TextView NAME = view.findViewById(R.id.coffee_name);
+            TextView TQ = view.findViewById(R.id.coffee_amount);   
+            TextView NAME = view.findViewById(R.id.coffee_name);    //리사이클러 아이템에 있는 TextView
 
             plus = view.findViewById(R.id.plusButton);
-            minus = view.findViewById(R.id.minusButton);
+            minus = view.findViewById(R.id.minusButton);  //리사이클러 아이템에 있는 ImageButton(맴버 변수)
 
             plus.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -525,16 +530,14 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                         tPrice=0;
                     tAmount=0;
                     }
-
-                    Log.v("TESTTEXT",""+testTP.getText().toString());
                 }});
+                
             minus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     for (int i = 0; i < coffeeSelectedList.size(); i++) {
                         if(coffeeSelectedList.get(i).getCoffeeN().equals(NAME.getText().toString())){
                             if(coffeeSelectedList.get(i).getCoffeeN().contains("(COLD)")){
-                                Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
                                 testN=coffeeSelectedList.get(i).getCoffeeQ();
                                 testN--;
                                 testP=testN*4000;
@@ -544,7 +547,6 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
                                 TP.setText(""+coffeeSelectedList.get(i).getCoffeeP());
                             }
                             else {
-                                Log.v("TEST!@#$",""+coffeeSelectedList.get(i).getCoffeeN());
                                 testN=coffeeSelectedList.get(i).getCoffeeQ();
                                 testN--;
                                 testP=testN*3000;
