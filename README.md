@@ -641,9 +641,42 @@ RecyclerView의 개념이 완전히 이해된건 아니었다. 그래서 앞부�
 create쪽에서는 버튼을 눌렀을 때 텍스트가 수정되는 것이 가능하긴 하지만, 한 번만 초기화되는 것뿐이어서 
 버튼을 여러 번 눌러서 텍스트가 계속 바뀌는 것은 onCreateViewHolder에서 처리하기 어렵다.
 
-**그래서 TextView의 값을 얻고 수정할려면 Bind쪽에서 설정해줘야 되는것이 바람직하다.**
+**그래서 TextView의 값을 얻고 동적으로 수정될려면 Bind쪽에서 설정해주는것이 바람직하다.**
 
 ![6](https://github.com/user-attachments/assets/1e93406a-11a0-45c7-a20d-08655bbde166)
+
+이제 중간부분의 마지막 파트이다.
+
+우선 전체삭제코드는 아래와 같다.🔽
+
+    public void clearItem(View view){
+            coffee1.setCoffeeP(0);
+            coffee1.setCoffeeQ(0);
+            coffee2.setCoffeeP(0);
+            coffee2.setCoffeeQ(0);
+            coffee3.setCoffeeP(0);
+            coffee3.setCoffeeQ(0);
+            coffee4.setCoffeeP(0);
+            coffee4.setCoffeeQ(0);
+            coffee5.setCoffeeP(0);
+            coffee5.setCoffeeQ(0);
+            coffee6.setCoffeeP(0);
+            coffee6.setCoffeeQ(0);
+            coffee7.setCoffeeP(0);
+            coffee7.setCoffeeQ(0);
+            coffee8.setCoffeeP(0);
+            coffee8.setCoffeeQ(0);
+            tv_amount.setText("총 0개 선택");
+            tv_price.setText("0원");
+            adapter.clear();
+        }  ///리스트의 데이터와 속성을 초기화하는 역활
+
+다음은 '결제'버튼이다. 결제버튼을 누르면 결제화면이 뜨면서 장바구니도(리스트) 넘겨줘야 된다.
+그런데 Intent로 리스트를 보낼때는 그냥 보내면 안된다.
+
+## 리스트를 보내는 방법 
+
+
 
 
 
