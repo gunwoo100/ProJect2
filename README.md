@@ -672,10 +672,93 @@ create쪽에서는 버튼을 눌렀을 때 텍스트가 수정되는 것이 가�
         }  ///리스트의 데이터와 속성을 초기화하는 역활
 
 다음은 '결제'버튼이다. 결제버튼을 누르면 결제화면이 뜨면서 장바구니도(리스트) 넘겨줘야 된다.
-그런데 Intent로 리스트를 보낼때는 그냥 보내면 안된다.
+그런데 Intent로 리스트를 보낼때는 그냥 보내면 안된다. 그냥 보내주면 아래와 같은 경고문이 뜬다.
+
+*android.os.BadParcelableException: Class not found when unmarshalling: com.example.app.Class.CoffeeDataSelected*
 
 ## 리스트를 보내는 방법 
+우선 내가 만든 클래스타입의 리스트를 보낼려먼 Parcelable라는걸 클래스에 implements해줘야 된다.
 
+⁕Parcelable란 객체를 데이터를 효율적으로 전달하기 위해 사용하는 인터페이스이다.
+
+다음은 Parcelable를 implements해줘야한 최종 클래스 코드이다.(코드 설명은 주석을 참고)🔽
+
+    public class CoffeeSelectedData implements Parcelable {
+        //Parcelable :  물건을 상자에 담아 다른 곳으로 보내는 것과 비슷하다.
+        String coffeeN;
+        int coffeeQ,coffeeP;
+
+        public CoffeeSelectedData(String coffeeN, int coffeeQ, int coffeeP) {
+            this.coffeeN = coffeeN;
+            this.coffeeQ = coffeeQ;
+            this.coffeeP = coffeeP;
+          }
+
+        @Override
+        public void writeToParcel(@NonNull Parcel dest, int flags) {
+            dest.writeString(coffeeN);  //coffeeN, coffeeQ, coffeeP 값을 Parcel 상자에 넣는다.
+            dest.writeInt(coffeeQ);
+            dest.writeInt(coffeeP);
+        }   ///SETTER
+
+
+        public static final Creator<CoffeeSelectedData> CREATOR = new Creator<CoffeeSelectedData>() {
+                    @Override
+                    public CoffeeSelectedData createFromParcel(Parcel in) {  // Parcel에서 데이터를 읽어서 CoffeeSelectedData 객체 생성
+                        return new CoffeeSelectedData(in);
+                    }
+
+                    @Override
+                    public CoffeeSelectedData[] newArray(int size) {
+                        return new CoffeeSelectedData[size];  // CoffeeSelectedData 객체의 배열을 생성
+                    }
+                };
+
+
+        protected CoffeeSelectedData(Parcel in) {
+            Log.v("TESTTAG12","");
+            coffeeN = in.readString();  ///상자에서 값을 꺼내기
+            coffeeQ = in.readInt();
+            coffeeP = in.readInt();
+        }
+
+
+
+        public String getCoffeeN() {
+            return coffeeN;
+        }
+    
+        public int getCoffeeQ() {
+            return coffeeQ;
+        }
+
+        public int getCoffeeP() {
+            return coffeeP;
+        }   ///GETTER
+
+        public void setCoffeeQ(int coffeeQ) {
+            this.coffeeQ = coffeeQ;
+        }
+
+        public void setCoffeeP(int coffeeP) {
+            this.coffeeP = coffeeP;
+        }
+    
+        @Override
+        public int describeContents() {  //파일과 같은 특별한 리소스를 다루고 있는지 설명해주는 함수
+            return 0;
+        }
+    
+    
+    }
+
+
+## 마무리
+
+중간중간 코드가 실행되지 않고 코드전체가 실행되지 않는 날도 종종 있었지만 그러한 과정에서 내가 몰랐던 내용과 배운내용을 실제로 사용해봐서 이번 프로젝드는 매우 의미가 있었다.
+
+지금까지 저의(백건우) 프로젝트 설명글을 끝까지 읽어주셔서 감사합니다. 비록 미흡한 부분도 있었지만 독자분들이 최대한 이해할 수 있도록 작성해봤습니다.
+감사합니다(●'◡'●)
 
 
 
