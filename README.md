@@ -447,14 +447,14 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
 
 *이제 버튼을 어떻게 구현했는지 설명하겠다.*
 
-• 우선 플러스 버튼과 마이너스 버튼(ImageButton)에다 setOnClickListener를 붙여서 버튼을 누르면
-  커피객체의 속성값이 증가하고, 총가격과 총갯수도 설정해줘야된다(.setText()).
+• 우선 플러스 버튼과 마이너스 버튼(ImageButton)에다 setOnClickListener를 붙여서 커피객체의 속성값이 증가하도록 설정해줘야되고,
+  총가격과 총갯수도 설정해줘야된다(.setText()).
 
-  그러기 위해서는 플러스 버튼,마이너스 버튼의 id와 viewKoreaMenu(activity_main_foodMenu_Korean)에 
+  그러기 위해서는 플러스 버튼,마이너스 버튼과 viewKoreaMenu(activity_main_foodMenu_Korean)에 있는 
   
   총가격과 총갯수를 표시해주는 TextView도 필요하다.
 
-다음은 위에서 말한 내용을 코드로 구현하였다.🔽
+다음은 앞에서 언급한 내용을 코드로 구현한것이다.🔽
 
     public class RvAdapter extends RecyclerView.Adapter<MyViewHolder> {
         List<CoffeeSelectedData> coffeeSelectedList;
@@ -486,7 +486,6 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             TextView TP = view.findViewById(R.id.sum_price);
             TextView TQ = view.findViewById(R.id.coffee_amount);   
             TextView NAME = view.findViewById(R.id.coffee_name);    //리사이클러 아이템에 있는 TextView
-
             plus = view.findViewById(R.id.plusButton);
             minus = view.findViewById(R.id.minusButton);  //리사이클러 아이템에 있는 ImageButton(맴버 변수)
 
@@ -577,6 +576,58 @@ ex)커피를 누르면 커피글씨 색깔이 검정색으로 변하고 나머�
             
             return new MyViewHolder(view);
         }
+
+![5](https://github.com/user-attachments/assets/ecd15e56-34b8-4151-8599-97f7127abc1f)
+
+1.plus나 minus버튼을 누르면 for문(for (int i = 0; i < coffeeSelectedList.size(); i++))이 먼제 시작된다.
+  
+  for문을 돌면서 첫번째 if문의 조건을 확인한다.
+
+2.첫번째 조건문은 사용자가 버튼을 누른 해당 view틀 안의 커피의 이름이 장바구니의 커피 이름과 같은지 확인하는 코드이다.
+ 
+ (만약 조건문이 true이면 i변수를 활용할 수 있다.) ex) coffeeSelectedList.get(**i**).setCoffeeQ(testN); 
+
+3.두번째 조건문은 해당 커피가 (COLD) 혹은 (HOT)이라는 글자가 포함되어 있는지 확인하는 코드이다.
+  
+  (만약 HOT이면 HOT에 대한 코드, COLD이면 COLD에 대한 코드가 실행된다.)
+
+4.HOT대한 코드, COLD에 대한 코드가 각각 실행되면서 커피의 속성값이 증가되거나 감소된다.
+
+5.이제 총합과 가격을 설정해줘야 된다.
+
+                    for (int j = 0; j <coffeeSelectedList.size() ; j++) {
+                        int test = coffeeSelectedList.get(j).getCoffeeP();
+                        int test2 = coffeeSelectedList.get(j).getCoffeeQ();
+                        Log.v("MYTAGS",String.valueOf(coffeeSelectedList.get(j).getCoffeeP()));
+                        tPrice+=test;
+                        tAmount+=test2;
+                    }
+                    testTP.setText(""+tPrice+"원");
+                    testTA.setText("총 "+tAmount+"개 선택");
+                    tPrice=0;
+                    tAmount=0;
+
+  for문을 돌면서 리스트 안에 있는 속성값을 모두 구한 다음에 맴버 변수(HOT,COLD의 if문에서도 사용되기 때문)tPrice,tAmount에 저장해준다.
+  그리고 .setText로 설정해주면 총가격과 총갯수가 설정된다.(마직막에는 tPrice,tAmount를 0으로 초기화해준다)
+
+  🟥하지만 읽으면서 **"무슨 수학 해설지마냥 왜이렇게 길어..?"** 라는 생각을 할 수 있다.
+  그치만 사실이다. 해당코드를 만든 나도 그런 생각을 중간중간하게 되었다. 약간 꾸역꾸역 만든 느낌도 들었다.
+  하지만 그날이 프로젝트 마지막 날이여서 어쩔수 없이 계속 이어나갔다. 
+
+  🟥그리고 사실 앞에서 설명한 코드는 onCreateViewHolder가 아닌 **onBindViewHolder**쪽에서 만드는 것이 바람직하다.
+    그 이유는 다음과 같다.
+
+# (번외) RecyclerView #
+
+하단부분의 코드를 작성하면서 리사이클러뷰를 어떻게 활용해야 되는지 고민이었다. 사실 개발당시의 난 RecyclerView의 개념이
+완전히 이해된건 아니었다. 그래서 앞부분과 중간부분도 일일이 수작업으로 한 것이다. 하지만 계속하면서 gpt에게도 물어보고 
+선생님에게 여쭤보면서 RecyclerView에 대한 개념이 조금씩 알아듣기 시작했다. 
+하지만 RecyclerView의 개념을 다 이해한 시점이 하필 프로젝트 끝나고 난 후였다...
+
+
+
+
+
 
 
 
