@@ -752,13 +752,24 @@ create쪽에서는 버튼을 눌렀을 때 텍스트가 수정되는 것이 가�
     
     }
 
+viewKorea쪽 코드
+
+    viewKoreaMenu.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putParcelableArrayListExtra("itemList", (ArrayList<? extends Parcelable>) coffeeSelected);  // Serializable 객체로 전달
+                startActivity(intent);
+        }
+    });  //<? extends Parcelable>는 Parcelable를 extends한 클래스는 허용
+
 
 ## 마무리
 
 중간중간 코드가 실행되지 않고 코드전체가 실행되지 않는 날도 종종 있었지만 그러한 과정에서 내가 몰랐던 내용과 배운내용을 실제로 사용해봐서 이번 프로젝드는 매우 의미가 있었다.
 
 지금까지 저의(백건우) 프로젝트 설명글을 끝까지 읽어주셔서 감사합니다. 비록 미흡한 부분도 있었지만 독자분들이 최대한 이해할 수 있도록 작성해봤습니다.
-감사합니다(●'◡'●)
+도움을 주신 선생님과 팀원분들에게 감사인사를 전하면서 글을 마치겠습니다. 감사합니다.(●'◡'●)
 
 
 
